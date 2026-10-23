@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WhereIAmPage.Views.LocationPage"
+             xmlns:vm="clr-namespace:WhereIAmPage.ViewModels"
+             x:DataType="vm:LocationViewModel"
+             BackgroundColor="Black"
+             Shell.NavBarIsVisible="False"
+             Title="LocationPage">
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" 
+                             HorizontalOptions="Center">
+            <Label Text="📍" FontSize="60" 
+                   HorizontalOptions="Center"/>
+            <Label Text="Onde estou" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" 
+                   FontSize="40" 
+                   TextColor="white"/>
+            <Button Text="Pegar minha localização " 
+                    Command="{Binding GetLocationCommand}" 
+                    Margin="0, 20" 
+                    BackgroundColor="HotPink" 
+                    CornerRadius="15"/>
+            <Label Text="Rua" Margin="0, 20, 0, 0" TextColor="White"/>
+            <Entry Text="{Binding CurrentLocation.Thoroughfare}" TextColor="White"/>
+            
+            <Label Text="Numero" Margin="0, 20, 0, 0" TextColor="White"/>
+            <Entry Text="{Binding CurrentLocation.FeatureName}" TextColor="White"/>
+            
+            <Label Text="Cidade" Margin="0, 20, 0, 0" TextColor="White"/>
+            <Entry Text="{Binding CurrentLocation.Locality}" TextColor="White"/>
+        </VerticalStackLayout> 
+    </ScrollView>
+</ContentPage>
